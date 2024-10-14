@@ -1,0 +1,39 @@
+{
+  "name": "nosgestesclimat-cms",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "repository": "git@github.com:incubateur-ademe/nosgestesclimat-cms.git",
+  "scripts": {
+    "build": "strapi build",
+    "develop": "strapi develop",
+    "format": "prettier --write \"**/*.{js,ts,md,json}\" && eslint . --fix",
+    "lint": "prettier --check \"**/*.{js,ts,md,json}\" && eslint .",
+    "start": "strapi start"
+  },
+  "dependencies": {
+    "@strapi/plugin-users-permissions": "5.0.6",
+    "@strapi/strapi": "^5.0.6",
+    "pg": "^8.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^9",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-prettier": "^5",
+    "prettier": "^3",
+    "typescript": "^5",
+    "typescript-eslint": "^8"
+  },
+  "strapi": {
+    "uuid": "69adb6af-e1c1-4ade-bcb4-f89c30cf70a5",
+    "telemetryDisabled": true
+  }
+}

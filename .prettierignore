@@ -1,0 +1,4 @@
+types/generated
+node_modules
+.strapi
+dist
