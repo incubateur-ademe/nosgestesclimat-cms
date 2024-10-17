@@ -12,6 +12,7 @@
     "start": "strapi start"
   },
   "dependencies": {
+    "@strapi/plugin-seo": "^2.0.1-rc.1",
     "@strapi/plugin-users-permissions": "5.0.6",
     "@strapi/strapi": "^5.0.6",
     "better-sqlite3": "^11.3.0",
