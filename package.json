@@ -7,6 +7,7 @@
   "scripts": {
     "build": "strapi build",
     "develop": "strapi develop",
+    "db:grant-roles": "node ./dist/database/grant-roles.js",
     "format": "prettier --write \"**/*.{js,ts,md,json}\" && eslint . --fix",
     "lint": "prettier --check \"**/*.{js,ts,md,json}\" && eslint .",
     "start": "strapi start"
