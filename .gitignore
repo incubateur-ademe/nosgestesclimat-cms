@@ -4,3 +4,5 @@ dist
 .strapi
 .env
 .strapi-updater.json
+.tmp/*
+public/uploads/*
