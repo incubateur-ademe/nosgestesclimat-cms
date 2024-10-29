@@ -7,6 +7,7 @@
   "scripts": {
     "build": "strapi build",
     "develop": "strapi develop",
+    "db:grant-roles": "node ./dist/database/grant-roles.js",
     "format": "prettier --write \"**/*.{js,ts,md,json}\" && eslint . --fix",
     "lint": "prettier --check \"**/*.{js,ts,md,json}\" && eslint .",
     "start": "strapi start"
@@ -18,7 +19,8 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
-    "styled-components": "^6.0.0"
+    "styled-components": "^6.0.0",
+    "tslib": "^2.8.0"
   },
   "devDependencies": {
     "@types/node": "^22",
