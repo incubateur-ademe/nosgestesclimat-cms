@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_element_faqs",
+  "info": {
+    "displayName": "FAQ",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Dropdown": {
+      "displayName": "Dropdown",
+      "type": "component",
+      "repeatable": true,
+      "component": "element.dropdown"
+    }
+  }
+}

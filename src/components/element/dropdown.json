@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_element_dropdowns",
+  "info": {
+    "displayName": "Dropdown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "blocks"
+    }
+  }
+}
