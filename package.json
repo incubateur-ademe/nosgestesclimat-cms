@@ -13,26 +13,27 @@
     "start": "strapi start"
   },
   "dependencies": {
-    "@strapi/plugin-users-permissions": "5.0.6",
-    "@strapi/strapi": "^5.0.6",
-    "pg": "^8.8.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "^6.0.0",
-    "styled-components": "^6.0.0",
-    "tslib": "^2.8.0"
+    "@strapi/plugin-users-permissions": "^5.4.0",
+    "@strapi/provider-upload-aws-s3": "^5.4.0",
+    "@strapi/strapi": "^5.4.0",
+    "pg": "^8.13.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "styled-components": "^6.1.13",
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "@types/node": "^22",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^9",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "9.14.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2",
-    "eslint-plugin-prettier": "^5",
-    "prettier": "^3",
-    "typescript": "^5",
-    "typescript-eslint": "^8"
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.14.0"
   },
   "strapi": {
     "uuid": "69adb6af-e1c1-4ade-bcb4-f89c30cf70a5",
