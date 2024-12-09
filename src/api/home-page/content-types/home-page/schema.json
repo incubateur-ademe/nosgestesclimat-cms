@@ -63,6 +63,11 @@
           "localized": true
         }
       }
+    },
+    "mainArticle": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
     }
   }
 }

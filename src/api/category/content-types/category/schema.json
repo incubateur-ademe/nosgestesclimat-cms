@@ -82,6 +82,23 @@
       "type": "integer",
       "default": 0,
       "required": true
+    },
+    "questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question.question",
+      "mappedBy": "category"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "category"
+    },
+    "mainArticle": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
     }
   }
 }

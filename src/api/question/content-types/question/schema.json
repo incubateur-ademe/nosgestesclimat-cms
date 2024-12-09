@@ -5,7 +5,7 @@
     "singularName": "question",
     "pluralName": "questions",
     "displayName": "Question",
-    "description": "Questions sor the category FAQ"
+    "description": "Questions for the category FAQ"
   },
   "options": {
     "draftAndPublish": true
@@ -54,6 +54,12 @@
       "type": "integer",
       "default": 0,
       "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "questions"
     }
   }
 }

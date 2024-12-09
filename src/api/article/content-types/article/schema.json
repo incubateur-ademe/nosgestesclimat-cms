@@ -37,7 +37,9 @@
       "required": true
     },
     "image": {
-      "allowedTypes": ["images"],
+      "allowedTypes": [
+        "images"
+      ],
       "type": "media",
       "multiple": false,
       "required": false,
@@ -96,6 +98,19 @@
         }
       },
       "type": "string"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "articles",
+      "required": true
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "articles"
     }
   }
 }
