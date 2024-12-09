@@ -13,6 +13,7 @@
     "start": "strapi start"
   },
   "dependencies": {
+    "@strapi/plugin-seo": "^2.0.4",
     "@strapi/plugin-users-permissions": "^5.4.0",
     "@strapi/provider-upload-aws-s3": "^5.4.0",
     "@strapi/strapi": "^5.4.0",

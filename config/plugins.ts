@@ -1,4 +1,7 @@
 export default ({ env }) => ({
+  seo: {
+    enabled: true,
+  },
   upload: {
     config: {
       provider: 'aws-s3',
