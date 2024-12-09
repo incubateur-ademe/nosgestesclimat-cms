@@ -15,6 +15,7 @@
   "dependencies": {
     "@strapi/provider-upload-aws-s3": "^5.4.0",
     "@strapi/strapi": "^5.4.0",
+    "marked": "^15.0.3",
     "pg": "^8.13.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
