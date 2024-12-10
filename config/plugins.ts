@@ -3,17 +3,18 @@ export default ({ env }) => ({
     config: {
       provider: 'aws-s3',
       providerOptions: {
-        credentials: {
-          accessKeyId: env('SCALEWAY_ACCESS_KEY_ID'),
-          secretAccessKey: env('SCALEWAY_ACCESS_SECRET'),
+        s3Options: {
+          credentials: {
+            accessKeyId: env('SCALEWAY_ACCESS_KEY_ID'),
+            secretAccessKey: env('SCALEWAY_ACCESS_SECRET'),
+          },
+          region: env('SCALEWAY_REGION'),
+          endpoint: env('SCALEWAY_ENDPOINT'),
+          params: {
+            Bucket: env('SCALEWAY_BUCKET'),
+          },
         },
-        region: env('SCALEWAY_REGION'),
-        endpoint: env('SCALEWAY_ENDPOINT'),
         rootPath: env('SCALEWAY_ROOT_PATH'),
-        params: {
-          ACL: 'private',
-          Bucket: env('SCALEWAY_BUCKET'),
-        },
       },
       actionOptions: {
         upload: {},
