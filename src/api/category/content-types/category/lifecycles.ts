@@ -22,6 +22,12 @@ const computedFieldsHook = (event: Event) => {
     category.htmlFaqDescription = ''
   }
 
+  if (category.content) {
+    category.htmlContent = marked.parse(category.content)
+  } else {
+    category.htmlContent = ''
+  }
+
   if (category.title) {
     category.slug = slugify(category.title, {
       lower: true,

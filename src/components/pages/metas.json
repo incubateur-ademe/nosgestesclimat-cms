@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_pages_metas",
+  "info": {
+    "displayName": "metadata",
+    "icon": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "minLength": 10,
+      "maxLength": 100
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
