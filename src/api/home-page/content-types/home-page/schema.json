@@ -68,6 +68,17 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::article.article"
+    },
+    "pageMetadata": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "pages.metas",
+      "required": true
     }
   }
 }
