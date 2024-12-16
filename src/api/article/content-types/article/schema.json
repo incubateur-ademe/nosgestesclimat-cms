@@ -37,10 +37,10 @@
       "required": true
     },
     "image": {
-      "allowedTypes": ["images"],
       "type": "media",
       "multiple": false,
       "required": false,
+      "allowedTypes": ["images"],
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -95,7 +95,9 @@
           "localized": true
         }
       },
-      "type": "string"
+      "type": "string",
+      "unique": true,
+      "required": true
     },
     "category": {
       "type": "relation",

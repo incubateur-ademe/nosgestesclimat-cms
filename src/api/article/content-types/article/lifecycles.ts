@@ -15,12 +15,10 @@ const computedFieldsHook = (event: Event) => {
     return
   }
 
-  if (article.title) {
+  if (!article.slug && article.title) {
     article.slug = slugify(article.title, {
       lower: true,
     })
-  } else {
-    article.slug = ''
   }
 
   if (article.content) {
