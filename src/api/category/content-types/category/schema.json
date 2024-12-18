@@ -25,7 +25,7 @@
       "type": "string",
       "required": true,
       "maxLength": 50,
-      "minLength": 10,
+      "minLength": 3,
       "unique": true
     },
     "image": {
@@ -64,7 +64,7 @@
         }
       },
       "type": "richtext",
-      "required": true
+      "required": false
     },
     "htmlContent": {
       "pluginOptions": {
