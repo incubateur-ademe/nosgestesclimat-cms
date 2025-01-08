@@ -23,11 +23,25 @@ const computedFieldsHook = (event: Event) => {
 
   if (article.content) {
     article.htmlContent = marked.parse(article.content)
-    article.headings = getHeadingList().map(({ id, level, raw }) => ({
-      id,
-      level,
-      text: raw,
-    }))
+    article.headings = getHeadingList().map(({ id, level, raw }) => {
+      const cleanId = slugify(id, {
+        strict: true,
+      })
+
+      if (cleanId !== id) {
+        article.htmlContent = article.htmlContent.replace(
+          `id="${id}"`,
+          `id="${cleanId}"`
+        )
+        id = cleanId
+      }
+
+      return {
+        id,
+        level,
+        text: raw,
+      }
+    })
   } else {
     article.htmlContent = ''
     article.headings = []
