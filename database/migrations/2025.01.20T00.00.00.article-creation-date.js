@@ -15,7 +15,9 @@ module.exports.up = async (knex) => {
   Update cms."articles" set created_at = created_at - created_at::date + '2023-06-05'::date where slug = 'journee-mondial-environnement';
   Update cms."articles" set created_at = created_at - created_at::date + '2023-08-24'::date where slug = 'maladaptation';
   Update cms."articles" set created_at = created_at - created_at::date + '2023-10-12'::date where slug = 'effet-rebond';
+  Update cms."articles" set created_at = created_at - created_at::date + '2023-11-01'::date where slug = 'definition-empreinte-carbone';
   Update cms."articles" set created_at = created_at - created_at::date + '2023-11-21'::date where slug = 'carbone-empreinte-parmi-autres';
+  Update cms."articles" set created_at = created_at - created_at::date + '2023-11-21'::date where slug = 'neuf-limites-planetaires-empreintes';
   Update cms."articles" set created_at = created_at - created_at::date + '2023-12-21'::date where slug = 'challenge-tes-amis';
   Update cms."articles" set created_at = created_at - created_at::date + '2024-01-25'::date where slug = 'alternatives-voiture-individuelle';
   Update cms."articles" set created_at = created_at - created_at::date + '2024-03-18'::date where slug = 'nouveau-parcours-organisations';
