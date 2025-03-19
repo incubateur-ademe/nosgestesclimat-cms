@@ -2,7 +2,7 @@ import type { Event } from '@strapi/database/dist/lifecycles'
 
 const validateDates = (event: Event) => {
   const banner = event.params.data
-  // Only validate if both dates are provided
+  // Start date and end date are required and end date must be after start date
   if (banner.startDate && banner.endDate) {
     const startDate = new Date(banner.startDate)
     const endDate = new Date(banner.endDate)
