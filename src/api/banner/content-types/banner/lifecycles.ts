@@ -5,7 +5,7 @@ const resourceType = 'api::banner.banner'
 
 const validateBanner = async (event: Event) => {
   const {
-    data: { endDate, startDate, locale, documentId },
+    data: { endDate, startDate, locale, documentId, publishedAt },
     where,
   } = event.params
 
@@ -20,6 +20,7 @@ const validateBanner = async (event: Event) => {
       locale,
       ...(where?.id ? { id: { $ne: where.id } } : {}),
       ...(documentId ? { documentId: { $ne: documentId } } : {}),
+      ...(publishedAt ? {} : { publishedAt: null }),
     },
   })
 
