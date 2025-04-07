@@ -33,7 +33,8 @@
           "localized": true
         }
       },
-      "component": "links.link"
+      "component": "links.link",
+      "required": true
     },
     "startDate": {
       "pluginOptions": {
