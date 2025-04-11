@@ -3,6 +3,8 @@ import { errors } from '@strapi/utils'
 
 const resourceType = 'api::partner.partner'
 
+const MAX_NUMBER_PARTNERS_DISPLAYED = 6
+
 const validateBanner = async (event: Event) => {
   const {
     data: { displayOnLandingPage, documentId },
@@ -24,7 +26,10 @@ const validateBanner = async (event: Event) => {
     partnersDisplayedOnLandingPage.find((p) => p.documentId === documentId)
   )
 
-  if (uniquePartners.length > 5 && displayOnLandingPage) {
+  if (
+    uniquePartners.length >= MAX_NUMBER_PARTNERS_DISPLAYED &&
+    displayOnLandingPage
+  ) {
     throw new errors.ValidationError(
       "Can't display more than 6 partners on the landing page"
     )
