@@ -9,7 +9,7 @@ const headingIdsGenerator = gfmHeadingId()
 
 marked.use(headingIdsGenerator)
 
-const computedFieldsHook = (event: Event) => {
+const computedFieldsHook = async (event: Event) => {
   const article = event.params.data
   if (!article) {
     return
@@ -22,7 +22,41 @@ const computedFieldsHook = (event: Event) => {
   }
 
   if (article.content) {
+    // Parse the content first
     article.htmlContent = marked.parse(article.content)
+
+    // Find all image tags and enhance them with media information
+    const imageRegex = /<img[^>]*src="([^">]+)"[^>]*>/g
+    let match = []
+    while ((match = imageRegex.exec(article.htmlContent)) !== null) {
+      const imageUrl = match[1]
+      const fullImageTag = match[0]
+
+      // Query the upload plugin to find the media
+      const image = await strapi.db.query('plugin::upload.file').findOne({
+        where: { url: imageUrl },
+      })
+
+      const { url, alternativeText, caption } = image || {}
+
+      if (caption) {
+        const accessibleImage = `
+          <figure>
+            <img 
+              src="${url}" 
+              alt="${alternativeText || ''}"
+            />
+            ${caption ? `<figcaption class="italic text-sm text-center">${caption}</figcaption>` : ''}
+          </figure>
+        `
+
+        article.htmlContent = article.htmlContent.replace(
+          fullImageTag,
+          accessibleImage
+        )
+      }
+    }
+
     article.headings = getHeadingList().map(({ id, level, raw }) => {
       const cleanId = slugify(id, {
         strict: true,
