@@ -1,15 +1,48 @@
 import type { Event } from '@strapi/database/dist/lifecycles'
-import { Marked } from 'marked'
-
+import type { Token, Tokens } from 'marked'
+import { Marked, Renderer } from 'marked'
 import { getHeadingList, gfmHeadingId } from 'marked-gfm-heading-id'
 import slugify from 'slugify'
 
-const marked = new Marked()
+type ImageWithCaptionToken = Tokens.Image & {
+  caption?: string | null
+}
+
+const hasImageCaption = (
+  token: Tokens.Image | ImageWithCaptionToken
+): token is ImageWithCaptionToken => 'caption' in token
+
 const headingIdsGenerator = gfmHeadingId()
+const accessibleImageWalker = {
+  async: true,
+  async walkTokens(
+    token: ImageWithCaptionToken | Exclude<Token, Tokens.Image>
+  ) {
+    if (token.type === 'image') {
+      const image = await strapi.db.query('plugin::upload.file').findOne({
+        where: { url: token.href },
+      })
 
-marked.use(headingIdsGenerator)
+      const { alternativeText, caption } = image || {}
 
-const computedFieldsHook = (event: Event) => {
+      token.text = alternativeText || token.text
+      token.caption = caption
+    }
+  },
+}
+
+const renderer = new Renderer()
+const originalImage = renderer.image.bind(renderer)
+
+renderer.image = (token: Tokens.Image | ImageWithCaptionToken) =>
+  hasImageCaption(token)
+    ? `<figure>${originalImage(token)}<figcaption>${token.caption}</figcaption></figure>`
+    : originalImage(token)
+
+const marked = new Marked({ renderer })
+marked.use(headingIdsGenerator, accessibleImageWalker)
+
+const computedFieldsHook = async (event: Event) => {
   const article = event.params.data
   if (!article) {
     return
@@ -22,7 +55,7 @@ const computedFieldsHook = (event: Event) => {
   }
 
   if (article.content) {
-    article.htmlContent = marked.parse(article.content)
+    article.htmlContent = await marked.parse(article.content)
     article.headings = getHeadingList().map(({ id, level, raw }) => {
       const cleanId = slugify(id, {
         strict: true,
