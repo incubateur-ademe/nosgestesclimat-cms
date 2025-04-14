@@ -20,7 +20,7 @@ const validateBanner = async (event: Event) => {
       locale,
       ...(where?.id ? { id: { $ne: where.id } } : {}),
       ...(documentId ? { documentId: { $ne: documentId } } : {}),
-      ...(publishedAt ? {} : { publishedAt: null }),
+      ...(publishedAt ? { publishedAt: { $ne: null } } : { publishedAt: null }),
     },
   })
 

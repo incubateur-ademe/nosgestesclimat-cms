@@ -7,29 +7,28 @@ const MAX_NUMBER_PARTNERS_DISPLAYED = 6
 
 const validateBanner = async (event: Event) => {
   const {
-    data: { displayOnLandingPage, documentId },
+    data: { displayOnLandingPage, documentId, publishedAt },
+    where,
   } = event.params
+
+  if (!displayOnLandingPage) {
+    return
+  }
 
   const partnersDisplayedOnLandingPage = await strapi.db
     .query(resourceType)
     .findMany({
       where: {
         displayOnLandingPage: { $eq: true },
-        documentId: { $ne: documentId },
+        ...(where?.id ? { id: { $ne: where.id } } : {}),
+        ...(documentId ? { documentId: { $ne: documentId } } : {}),
+        ...(publishedAt
+          ? { publishedAt: { $ne: null } }
+          : { publishedAt: null }),
       },
     })
 
-  // Filter out duplicates by ID
-  const uniquePartners = Array.from(
-    new Set(partnersDisplayedOnLandingPage.map((p) => p.documentId))
-  ).map((documentId) =>
-    partnersDisplayedOnLandingPage.find((p) => p.documentId === documentId)
-  )
-
-  if (
-    uniquePartners.length >= MAX_NUMBER_PARTNERS_DISPLAYED &&
-    displayOnLandingPage
-  ) {
+  if (partnersDisplayedOnLandingPage.length >= MAX_NUMBER_PARTNERS_DISPLAYED) {
     throw new errors.ValidationError(
       "Can't display more than 6 partners on the landing page"
     )
