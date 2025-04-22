@@ -10,7 +10,7 @@ type ImageWithCaptionToken = Tokens.Image & {
 
 const hasImageCaption = (
   token: Tokens.Image | ImageWithCaptionToken
-): token is ImageWithCaptionToken => 'caption' in token
+): token is ImageWithCaptionToken => 'caption' in token && !!token.caption
 
 const headingIdsGenerator = gfmHeadingId()
 const accessibleImageWalker = {
