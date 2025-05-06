@@ -64,7 +64,8 @@
     "category": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::partner-category.partner-category"
+      "target": "api::partner-category.partner-category",
+      "required": true
     }
   }
 }
