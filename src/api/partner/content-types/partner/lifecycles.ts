@@ -5,15 +5,11 @@ const resourceType = 'api::partner.partner'
 
 const MAX_NUMBER_PARTNERS_DISPLAYED = 6
 
-const validatePartner = async (event: Event) => {
+const validateBanner = async (event: Event) => {
   const {
-    data: { displayOnLandingPage, documentId, publishedAt, category },
+    data: { displayOnLandingPage, documentId, publishedAt },
     where,
   } = event.params
-
-  if (!category) {
-    throw new errors.ValidationError('The category field is required.')
-  }
 
   if (!displayOnLandingPage) {
     return
@@ -41,9 +37,9 @@ const validatePartner = async (event: Event) => {
 
 export default {
   beforeCreate(event: Event) {
-    return validatePartner(event)
+    return validateBanner(event)
   },
   beforeUpdate(event: Event) {
-    return validatePartner(event)
+    return validateBanner(event)
   },
 }
