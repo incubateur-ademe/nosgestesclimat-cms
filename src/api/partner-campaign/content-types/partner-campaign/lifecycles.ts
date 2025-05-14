@@ -13,7 +13,7 @@ const computedFieldsHook = async (event: Event) => {
   }
 
   if (!partnerCampaign.slug) {
-    partnerCampaign.slug = slugify(partnerCampaign.slug, {
+    partnerCampaign.slug = slugify(String(partnerCampaign.slug), {
       lower: true,
     })
   }
