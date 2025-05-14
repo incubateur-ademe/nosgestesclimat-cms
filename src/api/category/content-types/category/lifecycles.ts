@@ -28,8 +28,8 @@ const computedFieldsHook = (event: Event) => {
     category.htmlContent = ''
   }
 
-  if (category.title) {
-    category.slug = slugify(category.title, {
+  if (category.slug) {
+    category.slug = slugify(category.slug, {
       lower: true,
     })
   } else {
