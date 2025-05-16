@@ -92,6 +92,16 @@
         }
       },
       "type": "richtext"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "pages.faq"
     }
   }
 }
