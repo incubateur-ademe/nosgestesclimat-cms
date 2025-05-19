@@ -93,15 +93,11 @@
       },
       "type": "richtext"
     },
-    "faq": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "pages.faq"
+    "questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question.question",
+      "mappedBy": "partner_campaign"
     }
   }
 }
