@@ -1,6 +1,5 @@
 import type { Event } from '@strapi/database/dist/lifecycles'
 import { Marked, Renderer } from 'marked'
-import slugify from 'slugify'
 
 const renderer = new Renderer()
 const marked = new Marked({ renderer })
@@ -10,12 +9,6 @@ const computedFieldsHook = async (event: Event) => {
 
   if (!partnerCampaign) {
     return
-  }
-
-  if (typeof partnerCampaign.slug === 'undefined') {
-    partnerCampaign.slug = slugify(String(partnerCampaign.slug), {
-      lower: true,
-    })
   }
 
   if (partnerCampaign.content) {
