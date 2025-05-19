@@ -28,4 +28,11 @@ export default ({ env }) => ({
       },
     },
   },
+  'color-picker': {
+    enabled: true,
+    config: {
+      format: 'hex',
+      enableAlpha: true,
+    },
+  },
 })

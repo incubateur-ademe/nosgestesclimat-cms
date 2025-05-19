@@ -60,6 +60,12 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "questions"
+    },
+    "partner_campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::partner-campaign.partner-campaign",
+      "inversedBy": "questions"
     }
   }
 }
