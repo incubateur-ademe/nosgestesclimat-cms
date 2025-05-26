@@ -9,10 +9,8 @@ const computedFieldsHook = (event: Event) => {
     return
   }
 
-  if (question.answer) {
+  if (typeof question.answer === 'string') {
     question.htmlAnswer = marked.parse(question.answer)
-  } else {
-    question.htmlAnswer = ''
   }
 }
 

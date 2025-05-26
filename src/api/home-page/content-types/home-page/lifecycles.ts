@@ -9,16 +9,12 @@ const computedFieldsHook = (event: Event) => {
     return
   }
 
-  if (homePage.title) {
+  if (typeof homePage.title === 'string') {
     homePage.htmlTitle = marked.parse(homePage.title)
-  } else {
-    homePage.htmlTitle = ''
   }
 
-  if (homePage.description) {
+  if (typeof homePage.description === 'string') {
     homePage.htmlDescription = marked.parse(homePage.description)
-  } else {
-    homePage.htmlDescription = ''
   }
 }
 

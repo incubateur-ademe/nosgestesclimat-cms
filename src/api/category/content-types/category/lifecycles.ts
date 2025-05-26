@@ -10,30 +10,22 @@ const computedFieldsHook = (event: Event) => {
     return
   }
 
-  if (category.description) {
+  if (typeof category.description === 'string') {
     category.htmlDescription = marked.parse(category.description)
-  } else {
-    category.htmlDescription = ''
   }
 
-  if (category.faqDescription) {
+  if (typeof category.faqDescription === 'string') {
     category.htmlFaqDescription = marked.parse(category.faqDescription)
-  } else {
-    category.htmlFaqDescription = ''
   }
 
-  if (category.content) {
+  if (typeof category.content === 'string') {
     category.htmlContent = marked.parse(category.content)
-  } else {
-    category.htmlContent = ''
   }
 
-  if (category.slug) {
+  if (typeof category.slug === 'string') {
     category.slug = slugify(category.slug, {
       lower: true,
     })
-  } else {
-    category.slug = ''
   }
 }
 
