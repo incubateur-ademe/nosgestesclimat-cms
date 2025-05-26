@@ -54,7 +54,7 @@ const computedFieldsHook = async (event: Event) => {
     })
   }
 
-  if (article.content) {
+  if (typeof article.content === 'string') {
     article.htmlContent = await marked.parse(article.content)
     article.headings = getHeadingList().map(({ id, level, raw }) => {
       const cleanId = slugify(id, {
@@ -75,15 +75,10 @@ const computedFieldsHook = async (event: Event) => {
         text: raw,
       }
     })
-  } else {
-    article.htmlContent = ''
-    article.headings = []
   }
 
-  if (article.description) {
+  if (typeof article.description === 'string') {
     article.htmlDescription = marked.parse(article.description)
-  } else {
-    article.htmlDescription = ''
   }
 }
 

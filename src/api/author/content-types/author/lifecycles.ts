@@ -9,10 +9,8 @@ const computedFieldsHook = (event: Event) => {
     return
   }
 
-  if (author.description) {
+  if (typeof author.description === 'string') {
     author.htmlDescription = marked.parse(author.description)
-  } else {
-    author.htmlDescription = ''
   }
 }
 

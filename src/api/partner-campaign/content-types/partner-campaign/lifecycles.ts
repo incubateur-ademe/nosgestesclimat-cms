@@ -11,10 +11,8 @@ const computedFieldsHook = async (event: Event) => {
     return
   }
 
-  if (partnerCampaign.content) {
+  if (typeof partnerCampaign.content === 'string') {
     partnerCampaign.htmlContent = await marked.parse(partnerCampaign.content)
-  } else {
-    partnerCampaign.htmlContent = ''
   }
 }
 

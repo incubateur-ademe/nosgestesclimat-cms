@@ -29,7 +29,7 @@
     "pollSlug": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "string",
