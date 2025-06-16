@@ -1,6 +1,6 @@
 import type { Event } from '@strapi/database/dist/lifecycles'
 import type { Token, Tokens } from 'marked'
-import { Marked, Renderer } from 'marked'
+import { Marked, Parser, Renderer } from 'marked'
 import { getHeadingList, gfmHeadingId } from 'marked-gfm-heading-id'
 import slugify from 'slugify'
 
@@ -32,6 +32,7 @@ const accessibleImageWalker = {
 }
 
 const renderer = new Renderer()
+renderer.parser = new Parser()
 const originalImage = renderer.image.bind(renderer)
 
 renderer.image = (token: Tokens.Image | ImageWithCaptionToken) =>
@@ -78,7 +79,7 @@ const computedFieldsHook = async (event: Event) => {
   }
 
   if (typeof article.description === 'string') {
-    article.htmlDescription = marked.parse(article.description)
+    article.htmlDescription = await marked.parse(article.description)
   }
 }
 
