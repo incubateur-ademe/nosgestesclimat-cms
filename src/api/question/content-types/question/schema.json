@@ -27,6 +27,17 @@
       "minLength": 10,
       "required": true
     },
+    "kind": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": false,
+      "default": "blog",
+      "enum": ["blog", "faq", "campaign"]
+    },
     "answer": {
       "pluginOptions": {
         "i18n": {
@@ -59,6 +70,12 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::category.category",
+      "inversedBy": "questions"
+    },
+    "faq_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::faq-category.faq-category",
       "inversedBy": "questions"
     },
     "partner_campaign": {
