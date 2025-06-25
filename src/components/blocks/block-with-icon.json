@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_block_with_icons",
+  "info": {
+    "displayName": "BlockWithIcon",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images", "files"]
+    },
+    "text": {
+      "type": "blocks"
+    }
+  }
+}
