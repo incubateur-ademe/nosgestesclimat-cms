@@ -6,15 +6,14 @@
   },
   "options": {},
   "attributes": {
-    "text": {
-      "type": "blocks",
-      "required": true
-    },
     "icon": {
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": ["files", "images"]
+    },
+    "text": {
+      "type": "richtext"
     }
   }
 }

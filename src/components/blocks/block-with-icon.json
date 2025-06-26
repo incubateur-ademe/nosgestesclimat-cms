@@ -17,7 +17,7 @@
       "allowedTypes": ["images", "files"]
     },
     "text": {
-      "type": "blocks"
+      "type": "richtext"
     }
   }
 }
