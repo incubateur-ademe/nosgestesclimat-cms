@@ -121,6 +121,12 @@
       },
       "required": true,
       "component": "pages.metas"
+    },
+    "landing_thematiques": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::landing-thematique.landing-thematique",
+      "mappedBy": "articlesBlockArticles"
     }
   }
 }

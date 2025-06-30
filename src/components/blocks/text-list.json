@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_text_lists",
+  "info": {
+    "displayName": "TextList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
