@@ -73,7 +73,14 @@ const computedFieldsHook = async (event: Event) => {
   console.log('LandingThematique data keys:', Object.keys(landingThematique))
 
   // Traitement des blocs individuels
-  const blockFields = ['bloc1', 'bloc2', 'bloc3', 'bloc5', 'bloc6', 'bloc7']
+  const blockFields = [
+    'block1',
+    'block2',
+    'block3',
+    'block5',
+    'block6',
+    'block7',
+  ]
 
   for (const fieldName of blockFields) {
     console.log(`Processing field: ${fieldName}`)

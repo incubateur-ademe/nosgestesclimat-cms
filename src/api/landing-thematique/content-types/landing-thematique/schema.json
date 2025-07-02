@@ -29,7 +29,7 @@
       "type": "string",
       "required": true
     },
-    "bloc1": {
+    "block1": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -39,7 +39,7 @@
       },
       "component": "blocks.block-with-image"
     },
-    "bloc2": {
+    "block2": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -49,7 +49,7 @@
       },
       "component": "blocks.block-with-image"
     },
-    "bloc3": {
+    "block3": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -59,7 +59,7 @@
       },
       "component": "blocks.block-with-image"
     },
-    "bloc4": {
+    "block4": {
       "type": "component",
       "repeatable": true,
       "pluginOptions": {
@@ -72,7 +72,7 @@
       "min": 3,
       "max": 5
     },
-    "bloc5": {
+    "block5": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -82,7 +82,7 @@
       },
       "component": "blocks.block-with-image"
     },
-    "bloc6": {
+    "block6": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -114,7 +114,7 @@
       },
       "type": "string"
     },
-    "bloc7": {
+    "block7": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
