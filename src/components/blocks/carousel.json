@@ -13,7 +13,8 @@
       "allowedTypes": ["files", "images"]
     },
     "text": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "htmlText": {
       "type": "richtext"
