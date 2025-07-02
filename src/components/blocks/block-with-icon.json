@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_block_with_icons",
+  "info": {
+    "displayName": "TitleImageDescription",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files"]
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

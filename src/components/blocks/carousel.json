@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_carousels",
+  "info": {
+    "displayName": "CarouselItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["files", "images"]
+    },
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "htmlText": {
+      "type": "richtext"
+    },
+    "pinkText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
