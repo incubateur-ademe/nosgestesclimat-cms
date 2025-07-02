@@ -126,7 +126,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::landing-thematique.landing-thematique",
-      "mappedBy": "articlesBlockArticles"
+      "mappedBy": "articlesList"
     }
   }
 }

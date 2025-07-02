@@ -1,7 +1,7 @@
 {
   "collectionName": "components_blocks_block_with_icons",
   "info": {
-    "displayName": "BlockWithIcon",
+    "displayName": "TitleImageDescription",
     "description": ""
   },
   "options": {},
@@ -10,13 +10,13 @@
       "type": "string",
       "required": true
     },
-    "icon": {
+    "image": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": ["images", "files"]
     },
-    "text": {
+    "description": {
       "type": "richtext"
     }
   }

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_blocks_block_with_images",
+  "info": {
+    "displayName": "TitleImageListDescriptionWithMarkdown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files"]
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "htmlDescription": {
+      "type": "richtext"
+    },
+    "listItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.block-with-icon"
+    }
+  }
+}

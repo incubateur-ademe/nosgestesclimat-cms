@@ -1,12 +1,12 @@
 {
   "collectionName": "components_blocks_carousels",
   "info": {
-    "displayName": "Carousel",
+    "displayName": "CarouselItem",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "icon": {
+    "image": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -14,6 +14,13 @@
     },
     "text": {
       "type": "richtext"
+    },
+    "htmlText": {
+      "type": "richtext"
+    },
+    "pinkText": {
+      "type": "string",
+      "required": true
     }
   }
 }
