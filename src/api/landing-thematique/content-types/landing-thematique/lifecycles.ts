@@ -60,9 +60,6 @@ const processCarouselBlock = async (block: BlockReference) => {
 }
 
 const computedFieldsHook = async (event: Event) => {
-  console.log('=== LIFECYCLE HOOK TRIGGERED ===')
-  console.log('Event type:', event.action)
-
   const landingThematique = event.params.data
 
   if (!landingThematique) {
@@ -70,7 +67,15 @@ const computedFieldsHook = async (event: Event) => {
     return
   }
 
-  console.log('LandingThematique data keys:', Object.keys(landingThematique))
+  // Traitement du champ legend pour générer htmlLegend
+  if (landingThematique.legend) {
+    try {
+      const htmlLegend = await marked.parse(landingThematique.legend)
+      landingThematique.htmlLegend = htmlLegend
+    } catch (error) {
+      console.error('Error processing legend field:', error)
+    }
+  }
 
   // Traitement des blocs individuels
   const blockFields = [
@@ -83,9 +88,7 @@ const computedFieldsHook = async (event: Event) => {
   ]
 
   for (const fieldName of blockFields) {
-    console.log(`Processing field: ${fieldName}`)
     if (landingThematique[fieldName]) {
-      console.log(`${fieldName} exists`)
       await processBlockDescription(landingThematique[fieldName])
     } else {
       console.log(`${fieldName} does not exist`)
@@ -99,11 +102,6 @@ const computedFieldsHook = async (event: Event) => {
       await processCarouselBlock(block)
     }
   }
-
-  console.log(
-    'Final landingThematique data keys:',
-    Object.keys(landingThematique)
-  )
 }
 
 export default {
