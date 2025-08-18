@@ -1,13 +1,10 @@
-// import type { Core } from '@strapi/strapi';
+import type { Core } from '@strapi/strapi'
+import { registerMediaLibraryDeletionMiddleware } from './registers/media-library-deletion'
 
 export default {
-  /**
-   * An asynchronous register function that runs before
-   * your application is initialized.
-   *
-   * This gives you an opportunity to extend code.
-   */
-  register(/* { strapi }: { strapi: Core.Strapi } */) {},
+  register({ strapi }: { strapi: Core.Strapi }) {
+    registerMediaLibraryDeletionMiddleware(strapi)
+  },
 
   /**
    * An asynchronous bootstrap function that runs before
