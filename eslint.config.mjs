@@ -1,12 +1,32 @@
 import eslint from '@eslint/js'
 import eslintPluginImport from 'eslint-plugin-import'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
-// eslint-disable-next-line import/no-unresolved
 import typescriptEslint from 'typescript-eslint'
 
 export default [
   {
-    ignores: ['node_modules/*', 'dist/*', '.strapi/*', 'types/generated/*'],
+    ignores: [
+      'node_modules/*',
+      'dist/*',
+      '.strapi/*',
+      'types/generated/*',
+      'eslint.config.mjs',
+    ],
+  },
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
+    },
+    settings: {
+      'import/resolver': {
+        typescript: true,
+        node: {
+          extensions: ['.js', '.ts', '.json'],
+        },
+      },
+    },
   },
   eslint.configs.recommended,
   ...typescriptEslint.configs.recommended,
