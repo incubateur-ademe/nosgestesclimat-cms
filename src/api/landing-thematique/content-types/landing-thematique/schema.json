@@ -12,29 +12,45 @@
   },
   "pluginOptions": {
     "i18n": {
-      "localized": false
+      "localized": true
     }
   },
   "attributes": {
+    "slug": {
+      "type": "string",
+      "required": true
+    },
     "title": {
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "type": "text",
       "required": true
     },
-    "slug": {
-      "type": "string",
-      "required": true
+    "legend": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
+    },
+    "htmlLegend": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
     },
     "block1": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "component": "blocks.block-with-image"
@@ -44,7 +60,7 @@
       "repeatable": false,
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "component": "blocks.block-with-image"
@@ -54,7 +70,7 @@
       "repeatable": false,
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "component": "blocks.block-with-image"
@@ -64,7 +80,7 @@
       "repeatable": true,
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "component": "blocks.carousel",
@@ -77,7 +93,7 @@
       "repeatable": false,
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "component": "blocks.block-with-image"
@@ -87,12 +103,12 @@
       "repeatable": false,
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "component": "blocks.block-with-image"
     },
-    "articlesList": {
+    "articles": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::article.article",
@@ -101,7 +117,7 @@
     "articlesCTALabel": {
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "type": "string"
@@ -109,7 +125,7 @@
     "articlesCTALink": {
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "type": "string"
@@ -119,7 +135,7 @@
       "repeatable": false,
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "component": "blocks.block-with-image"
@@ -127,34 +143,18 @@
     "faq": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::faq-category.faq-category"
+      "target": "api::faq.faq"
     },
     "metadata": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "component": "pages.metas",
       "required": true
-    },
-    "legend": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "richtext"
-    },
-    "htmlLegend": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "richtext"
     }
   }
 }

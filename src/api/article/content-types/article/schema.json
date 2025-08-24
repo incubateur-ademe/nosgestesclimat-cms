@@ -105,6 +105,12 @@
       "target": "api::category.category",
       "inversedBy": "articles"
     },
+    "blogCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::blog-category.blog-category",
+      "inversedBy": "articles"
+    },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
@@ -126,7 +132,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::landing-thematique.landing-thematique",
-      "mappedBy": "articlesList"
+      "mappedBy": "articles"
     }
   }
 }
