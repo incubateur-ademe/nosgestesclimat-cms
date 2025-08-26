@@ -42,7 +42,7 @@
           "localized": false
         }
       },
-      "required": false,
+      "required": true,
       "default": "blogCategory",
       "enum": [
         "blogCategory",
@@ -58,8 +58,15 @@
         }
       },
       "type": "integer",
-      "default": 0,
-      "required": true
+      "default": 0
+    },
+    "key": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     },
     "questions": {
       "type": "relation",

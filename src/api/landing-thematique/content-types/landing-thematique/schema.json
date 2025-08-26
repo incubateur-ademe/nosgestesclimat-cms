@@ -112,7 +112,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::article.article",
-      "inversedBy": "landing_thematiques"
+      "inversedBy": "landingThematiques"
     },
     "articlesCTALabel": {
       "pluginOptions": {
