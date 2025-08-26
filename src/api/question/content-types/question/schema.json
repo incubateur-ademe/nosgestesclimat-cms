@@ -27,17 +27,6 @@
       "maxLength": 100,
       "required": true
     },
-    "kind": {
-      "type": "enumeration",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": false,
-      "default": "blog",
-      "enum": ["blog", "faq", "campaign"]
-    },
     "answer": {
       "type": "richtext",
       "pluginOptions": {
