@@ -72,12 +72,6 @@
       "target": "api::category.category",
       "inversedBy": "questions"
     },
-    "faq_category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::faq-category.faq-category",
-      "inversedBy": "questions"
-    },
     "partner_campaign": {
       "type": "relation",
       "relation": "manyToOne",
