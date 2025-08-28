@@ -1,5 +1,6 @@
 import type { Event } from '@strapi/database/dist/lifecycles'
 import { Marked, Renderer } from 'marked'
+import { removeEmptyTagsFromGeneratedHtml } from '../../../../helpers/removeEmptyTagsFromGeneratedHtml'
 
 const renderer = new Renderer()
 const marked = new Marked({ renderer })
@@ -19,7 +20,9 @@ const processBlockDescription = async (block?: BlockReference) => {
     })
 
     if (fullBlock && typeof fullBlock.description === 'string') {
-      const htmlDescription = await marked.parse(fullBlock.description)
+      const htmlDescription = removeEmptyTagsFromGeneratedHtml(
+        await marked.parse(fullBlock.description)
+      )
       // Mettre à jour le champ htmlDescription du composant dans la base de données
       await strapi.db.query('blocks.block-with-image').update({
         where: { id: block.id },
@@ -36,7 +39,9 @@ const processCarouselBlock = async (block?: BlockReference) => {
     })
 
     if (fullBlock && typeof fullBlock.text === 'string') {
-      const htmlText = await marked.parse(fullBlock.text)
+      const htmlText = removeEmptyTagsFromGeneratedHtml(
+        await marked.parse(fullBlock.text)
+      )
       // Mettre à jour le champ htmlText du composant dans la base de données
       await strapi.db.query('blocks.carousel').update({
         where: { id: block.id },
@@ -55,7 +60,9 @@ const computedFieldsHook = async (event: Event) => {
 
   // Traitement du champ legend pour générer htmlLegend
   if (typeof landingThematique.legend === 'string') {
-    landingThematique.htmlLegend = await marked.parse(landingThematique.legend)
+    landingThematique.htmlLegend = removeEmptyTagsFromGeneratedHtml(
+      await marked.parse(landingThematique.legend)
+    )
   }
 
   // Traitement des blocs individuels

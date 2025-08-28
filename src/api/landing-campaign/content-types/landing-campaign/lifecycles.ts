@@ -1,5 +1,6 @@
 import type { Event } from '@strapi/database/dist/lifecycles'
 import { Marked, Renderer } from 'marked'
+import { removeEmptyTagsFromGeneratedHtml } from '../../../../helpers/removeEmptyTagsFromGeneratedHtml'
 
 const renderer = new Renderer()
 const marked = new Marked({ renderer })
@@ -12,7 +13,9 @@ const computedFieldsHook = async (event: Event) => {
   }
 
   if (typeof landingCampaign.content === 'string') {
-    landingCampaign.htmlContent = await marked.parse(landingCampaign.content)
+    landingCampaign.htmlContent = removeEmptyTagsFromGeneratedHtml(
+      await marked.parse(landingCampaign.content)
+    )
   }
 }
 

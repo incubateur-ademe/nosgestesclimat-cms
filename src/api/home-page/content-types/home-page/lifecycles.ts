@@ -1,5 +1,6 @@
 import type { Event } from '@strapi/database/dist/lifecycles'
 import { Marked } from 'marked'
+import { removeEmptyTagsFromGeneratedHtml } from '../../../../helpers/removeEmptyTagsFromGeneratedHtml'
 
 const marked = new Marked()
 
@@ -10,11 +11,15 @@ const computedFieldsHook = (event: Event) => {
   }
 
   if (typeof homePage.title === 'string') {
-    homePage.htmlTitle = marked.parse(homePage.title)
+    homePage.htmlTitle = removeEmptyTagsFromGeneratedHtml(
+      marked.parse(homePage.title)
+    )
   }
 
   if (typeof homePage.description === 'string') {
-    homePage.htmlDescription = marked.parse(homePage.description)
+    homePage.htmlDescription = removeEmptyTagsFromGeneratedHtml(
+      marked.parse(homePage.description)
+    )
   }
 }
 

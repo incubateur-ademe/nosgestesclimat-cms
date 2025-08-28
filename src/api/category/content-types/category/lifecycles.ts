@@ -1,6 +1,7 @@
 import type { Event } from '@strapi/database/dist/lifecycles'
 import { Marked } from 'marked'
 import slugify from 'slugify'
+import { removeEmptyTagsFromGeneratedHtml } from '../../../../helpers/removeEmptyTagsFromGeneratedHtml'
 
 const marked = new Marked()
 
@@ -11,15 +12,21 @@ const computedFieldsHook = (event: Event) => {
   }
 
   if (typeof category.description === 'string') {
-    category.htmlDescription = marked.parse(category.description)
+    category.htmlDescription = removeEmptyTagsFromGeneratedHtml(
+      marked.parse(category.description)
+    )
   }
 
   if (typeof category.faqDescription === 'string') {
-    category.htmlFaqDescription = marked.parse(category.faqDescription)
+    category.htmlFaqDescription = removeEmptyTagsFromGeneratedHtml(
+      marked.parse(category.faqDescription)
+    )
   }
 
   if (typeof category.content === 'string') {
-    category.htmlContent = marked.parse(category.content)
+    category.htmlContent = removeEmptyTagsFromGeneratedHtml(
+      marked.parse(category.content)
+    )
   }
 
   if (typeof category.slug === 'string') {
