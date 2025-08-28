@@ -3,6 +3,7 @@ import type { Token, Tokens } from 'marked'
 import { Marked, Parser, Renderer } from 'marked'
 import { getHeadingList, gfmHeadingId } from 'marked-gfm-heading-id'
 import slugify from 'slugify'
+import { removeEmptyTagsFromGeneratedHtml } from '../../../../helpers/removeEmptyTagsFromGeneratedHtml'
 
 type ImageWithCaptionToken = Tokens.Image & {
   caption?: string | null
@@ -56,7 +57,9 @@ const computedFieldsHook = async (event: Event) => {
   }
 
   if (typeof article.content === 'string') {
-    article.htmlContent = await marked.parse(article.content)
+    article.htmlContent = removeEmptyTagsFromGeneratedHtml(
+      await marked.parse(article.content)
+    )
     article.headings = getHeadingList().map(({ id, level, raw }) => {
       const cleanId = slugify(id, {
         strict: true,
@@ -79,7 +82,9 @@ const computedFieldsHook = async (event: Event) => {
   }
 
   if (typeof article.description === 'string') {
-    article.htmlDescription = await marked.parse(article.description)
+    article.htmlDescription = removeEmptyTagsFromGeneratedHtml(
+      await marked.parse(article.description)
+    )
   }
 }
 
