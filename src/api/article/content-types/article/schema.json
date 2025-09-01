@@ -99,12 +99,6 @@
       "unique": true,
       "required": true
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "articles"
-    },
     "blogCategory": {
       "type": "relation",
       "relation": "manyToOne",
@@ -128,7 +122,7 @@
       "required": true,
       "component": "pages.metas"
     },
-    "landing_thematiques": {
+    "landingThematiques": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::landing-thematique.landing-thematique",
