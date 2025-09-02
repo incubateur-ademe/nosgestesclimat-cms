@@ -8,9 +8,23 @@ type ImageWithCaptionToken = Tokens.Image & {
   caption?: string | null
 }
 
-const hasImageCaption = (
-  token: Tokens.Image | ImageWithCaptionToken
-): token is ImageWithCaptionToken => 'caption' in token && !!token.caption
+type ParagraphWithImageWithCaptionToken = Omit<Tokens.Paragraph, 'tokens'> & {
+  tokens: [ImageWithCaptionToken]
+}
+
+const isParagraphWithImageWithCaptionToken = (
+  token: Tokens.Paragraph
+): token is ParagraphWithImageWithCaptionToken => {
+  const { tokens = [] } = token
+
+  if (tokens.length !== 1) {
+    return false
+  }
+
+  const [imageToken] = tokens
+
+  return 'caption' in imageToken && !!imageToken.caption
+}
 
 const headingIdsGenerator = gfmHeadingId()
 const accessibleImageWalker = {
@@ -33,12 +47,19 @@ const accessibleImageWalker = {
 
 const renderer = new Renderer()
 renderer.parser = new Parser()
-const originalImage = renderer.image.bind(renderer)
+const originalParagraph = renderer.paragraph.bind(renderer)
 
-renderer.image = (token: Tokens.Image | ImageWithCaptionToken) =>
-  hasImageCaption(token)
-    ? `<figure>${originalImage(token)}<figcaption>${token.caption}</figcaption></figure>`
-    : originalImage(token)
+renderer.paragraph = (token: Tokens.Paragraph) => {
+  if (isParagraphWithImageWithCaptionToken(token)) {
+    const {
+      tokens: [imageToken],
+    } = token
+
+    return `<figure>${renderer.image(imageToken)}<figcaption>${imageToken.caption}</figcaption></figure>`
+  }
+
+  return originalParagraph(token)
+}
 
 const marked = new Marked({ renderer })
 marked.use(headingIdsGenerator, accessibleImageWalker)
