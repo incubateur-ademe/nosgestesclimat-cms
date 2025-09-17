@@ -85,7 +85,7 @@
       },
       "component": "blocks.carousel",
       "required": false,
-      "min": 3,
+      "min": 2,
       "max": 5
     },
     "block5": {
