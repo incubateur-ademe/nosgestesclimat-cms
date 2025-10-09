@@ -82,17 +82,23 @@ renderer.paragraph = (token: Tokens.Paragraph) => {
     } = token
 
     const { caption, detailedDescription } = imageToken
+
     const dom: string[] = []
 
-    dom.push('<figure role="img"')
+    dom.push('<figure>')
+
+    const img = renderer.image(imageToken)
 
     if (detailedDescription) {
-      dom.push(` aria-labelledby="image-description-${detailedDescription.id}"`)
+      dom.push(
+        img.replace(
+          /^<img\s/,
+          `<img aria-describedby="image-description-${detailedDescription.id}"`
+        )
+      )
+    } else {
+      dom.push(img)
     }
-
-    dom.push('>')
-
-    dom.push(renderer.image(imageToken))
 
     if (caption) {
       dom.push(`<figcaption>${caption}</figcaption>`)
