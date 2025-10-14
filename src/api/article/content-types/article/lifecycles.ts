@@ -51,8 +51,14 @@ const accessibleImageWalker = {
 
       const { alternativeText, caption, id: imageId } = image || {}
 
-      token.text = alternativeText || token.text
+      token.text = alternativeText || ''
       token.caption = caption
+
+      if (!token.text && Array.isArray(token.tokens)) {
+        token.tokens
+          .filter((t): t is Tokens.Text => t.type === 'text')
+          .forEach((t) => (t.text = ''))
+      }
 
       if (imageId) {
         const imageDescription = await strapi.db
