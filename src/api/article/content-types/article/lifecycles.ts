@@ -54,6 +54,7 @@ const accessibleImageWalker = {
       token.text = alternativeText || ''
       token.caption = caption
 
+      // Force empty alt text, remove any text tokens that could be present and used by marked
       if (!token.text && Array.isArray(token.tokens)) {
         token.tokens
           .filter((t): t is Tokens.Text => t.type === 'text')
