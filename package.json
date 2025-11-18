@@ -14,9 +14,10 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@strapi/plugin-color-picker": "^5.14.0",
-    "@strapi/provider-upload-aws-s3": "^5.14.0",
-    "@strapi/strapi": "^5.14.0",
+    "@strapi/plugin-color-picker": "^5.31.0",
+    "@strapi/provider-email-nodemailer": "^5.31.0",
+    "@strapi/provider-upload-aws-s3": "^5.31.0",
+    "@strapi/strapi": "^5.31.0",
     "marked": "^15.0.12",
     "marked-gfm-heading-id": "^4.1.2",
     "pg": "^8.16.3",
