@@ -1,1 +1,1 @@
-postdeploy: yarn db:grant-roles
+postdeploy: pnpm db:grant-roles
