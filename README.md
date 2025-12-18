@@ -6,7 +6,7 @@ Une application strapi qui gère la fonctionnalité blog de [nosgestesclimat-sit
 
 ### Pré-requis
 
-Ce projet utilise [node](https://nodejs.org), [yarn](https://yarnpkg.com/), [docker](https://www.docker.com/) et [docker-compose](https://docs.docker.com/compose/)
+Ce projet utilise [node](https://nodejs.org), [pnpm](https://pnpm.io/), [docker](https://www.docker.com/) et [docker-compose](https://docs.docker.com/compose/)
 
 Pour l'utiliser en local, cloner ce repo et créer un fichier .env contenant les variables contenues dans le fichier [`.env.example`](./.env.example)
 
@@ -15,7 +15,7 @@ Pour l'utiliser en local, cloner ce repo et créer un fichier .env contenant les
 Installe les dépendances
 
 ```bash
-yarn install
+pnpm install
 ```
 
 Lance les services bases de données
@@ -27,29 +27,29 @@ docker-compose up
 Builde le projet (requiert les dépendances)
 
 ```bash
-yarn build
+pnpm build
 ```
 
 Lance le service (requiert les services)
 
 ```bash
-yarn start
+pnpm start
 ```
 
 Lance le service en mode dev (requiert les services)
 
 ```bash
-yarn develop
+pnpm develop
 ```
 
 Formatte le code
 
 ```bash
-yarn format
+pnpm format
 ```
 
 Lint le code
 
 ```bash
-yarn lint
+pnpm lint
 ```
