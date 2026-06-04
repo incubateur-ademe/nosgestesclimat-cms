@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_lpkm_podiums",
+  "info": {
+    "displayName": "Podium",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "podiumTitle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

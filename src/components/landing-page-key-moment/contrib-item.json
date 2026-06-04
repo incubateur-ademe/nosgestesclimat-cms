@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_lpkm_contrib_items",
+  "info": {
+    "displayName": "ContribItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "htmlText": {
+      "type": "richtext"
+    }
+  }
+}

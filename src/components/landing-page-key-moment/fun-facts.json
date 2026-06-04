@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_lpkm_fun_facts",
+  "info": {
+    "displayName": "FunFacts",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "primaryCTA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "links.link"
+    },
+    "secondaryCTA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "links.link"
+    }
+  }
+}

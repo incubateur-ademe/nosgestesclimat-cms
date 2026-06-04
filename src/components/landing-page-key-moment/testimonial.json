@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_lpkm_testimonials",
+  "info": {
+    "displayName": "Testimonial",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "htmlText": {
+      "type": "richtext"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "position": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    }
+  }
+}
