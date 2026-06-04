@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_lpkm_how_to_contributes",
+  "info": {
+    "displayName": "HowToContribute",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "switchLabel1": {
+      "type": "string",
+      "required": true
+    },
+    "switchLabel2": {
+      "type": "string",
+      "required": true
+    },
+    "itemsLabel1": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page-key-moment.contrib-item",
+      "max": 3
+    },
+    "itemsLabel2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page-key-moment.contrib-item",
+      "max": 3
+    }
+  }
+}

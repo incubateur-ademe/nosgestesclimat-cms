@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_lpkm_footer_blocks",
+  "info": {
+    "displayName": "FooterBlock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "links.link"
+    }
+  }
+}

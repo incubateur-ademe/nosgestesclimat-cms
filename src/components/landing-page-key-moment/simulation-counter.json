@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_lpkm_simulation_counters",
+  "info": {
+    "displayName": "SimulationCounter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "goal": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

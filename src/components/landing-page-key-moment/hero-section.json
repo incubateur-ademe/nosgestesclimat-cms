@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_lpkm_hero_sections",
+  "info": {
+    "displayName": "HeroSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "pinkTitle": {
+      "type": "string"
+    },
+    "eventSubtitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleDescription": {
+      "type": "richtext"
+    }
+  }
+}

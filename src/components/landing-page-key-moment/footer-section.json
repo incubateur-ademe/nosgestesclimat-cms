@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_lpkm_footer_sections",
+  "info": {
+    "displayName": "FooterSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "block1": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing-page-key-moment.footer-block"
+    },
+    "block2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing-page-key-moment.footer-block"
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_page_key_moments",
+  "info": {
+    "singularName": "landing-page-key-moment",
+    "pluralName": "landing-page-key-moments",
+    "displayName": "LandingPageKeyMoment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "pages.metas",
+      "required": true
+    },
+    "startDate": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "datetime",
+      "required": true
+    },
+    "endDate": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "datetime",
+      "required": true
+    },
+    "heroSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "landing-page-key-moment.hero-section"
+    },
+    "simulationCounter": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "landing-page-key-moment.simulation-counter"
+    },
+    "primaryCTA": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "links.link"
+    },
+    "secondaryCTA": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "links.link"
+    },
+    "podium": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "landing-page-key-moment.podium"
+    },
+    "funFacts": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "landing-page-key-moment.fun-facts"
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "landing-page-key-moment.testimonial"
+    },
+    "howToContribute": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "landing-page-key-moment.how-to-contribute"
+    },
+    "footerSection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "landing-page-key-moment.footer-section"
+    }
+  }
+}
