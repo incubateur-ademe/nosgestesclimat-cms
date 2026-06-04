@@ -13,6 +13,9 @@
     "text": {
       "type": "richtext",
       "required": true
+    },
+    "htmlText": {
+      "type": "richtext"
     }
   }
 }

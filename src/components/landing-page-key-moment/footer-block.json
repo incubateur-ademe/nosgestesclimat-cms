@@ -17,6 +17,9 @@
       "type": "richtext",
       "required": true
     },
+    "htmlText": {
+      "type": "richtext"
+    },
     "cta": {
       "type": "component",
       "repeatable": false,

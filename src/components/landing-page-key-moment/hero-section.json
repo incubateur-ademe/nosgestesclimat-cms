@@ -23,6 +23,9 @@
     },
     "titleDescription": {
       "type": "richtext"
+    },
+    "htmlTitleDescription": {
+      "type": "richtext"
     }
   }
 }

@@ -16,6 +16,9 @@
       "type": "richtext",
       "required": true
     },
+    "htmlText": {
+      "type": "richtext"
+    },
     "name": {
       "type": "string",
       "required": true
