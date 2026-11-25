@@ -30,11 +30,11 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(pg@8.23.1)
       marked:
-        specifier: ^15.0.12
-        version: 15.0.12
+        specifier: ^18.2.1
+        version: 18.2.1
       marked-gfm-heading-id:
         specifier: ^4.1.4
-        version: 4.1.4(marked@15.0.12)
+        version: 4.1.4(marked@18.2.1)
       pg:
         specifier: ^8.23.1
         version: 8.23.1
@@ -5775,9 +5775,9 @@ packages:
     peerDependencies:
       marked: '>=13 <19'
 
-  marked@15.0.12:
-    resolution: {integrity: sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==}
-    engines: {node: '>= 18'}
+  marked@18.2.1:
+    resolution: {integrity: sha512-ii4bxCTCqqwpT86XZWgJNs+ZnAIZksmLGYMViWA7PDIXYIeNo1x6cDdX3JOip9NM/cI6p8z57FxliACboTruMA==}
+    engines: {node: '>= 20'}
     hasBin: true
 
   match-sorter@6.3.4:
@@ -14700,12 +14700,12 @@ snapshots:
       punycode.js: 2.3.1
       uc.micro: 2.1.0
 
-  marked-gfm-heading-id@4.1.4(marked@15.0.12):
+  marked-gfm-heading-id@4.1.4(marked@18.2.1):
     dependencies:
       github-slugger: 2.0.0
-      marked: 15.0.12
+      marked: 18.2.1
 
-  marked@15.0.12: {}
+  marked@18.2.1: {}
 
   match-sorter@6.3.4:
     dependencies:
