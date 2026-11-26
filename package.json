@@ -5,7 +5,7 @@
   "description": "A Strapi application",
   "repository": "git@github.com:incubateur-ademe/nosgestesclimat-cms.git",
   "scripts": {
-    "build": "strapi build",
+    "build": "node scripts/diagnose-swc.mjs; strapi build",
     "develop": "strapi develop",
     "db:grant-roles": "node ./dist/database/grant-roles.js",
     "format": "prettier --write \"**/*.{js,ts,md,json}\" && eslint . --fix",
