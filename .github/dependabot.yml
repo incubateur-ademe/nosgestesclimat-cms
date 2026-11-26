@@ -7,6 +7,14 @@ updates:
       interval: 'weekly'
     cooldown:
       default-days: 7
+    open-pull-requests-limit: 10
+    groups:
+      minor-and-patch:
+        patterns:
+          - '*'
+        update-types:
+          - 'minor'
+          - 'patch'
 
   - package-ecosystem: 'github-actions'
     directory: '/'
@@ -14,3 +22,7 @@ updates:
       interval: 'weekly'
     cooldown:
       default-days: 7
+    groups:
+      github-actions:
+        patterns:
+          - '*'
